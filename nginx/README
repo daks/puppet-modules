@@ -1,0 +1,19 @@
+Nginx module
+============
+
+Basic Nginx Puppet module
+
+Classes
+-------
+
+nginx::package
+
+nginx::service
+
+
+Types
+-----
+
+nginx::site::redirect
+    
+
