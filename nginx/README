@@ -8,7 +8,12 @@ Classes
 
 nginx::package
 
+    installs the Nginx packages
+
+
 nginx::service
+
+    ensure that Nginx service is running
 
 
 Types
@@ -16,4 +21,22 @@ Types
 
 nginx::site::redirect
     
+    creates a simple virtualhost which redirects to an url
+
+    parameters:
+
+        nginx_servername: 
+            the virtualhost name
+        nginx_serveraliases
+            an array with alternative server names
+        nginx_port:
+            its port (default: 80)
+        nginx_redirecturl:
+            the destination url of the redirection
+        default_vhost:
+            is this vhost the default one? (default: false)
+        permanent:
+            is this redirection permanent? (default: true)
+        enabled:
+            enable this vhost? (default: true)
 
