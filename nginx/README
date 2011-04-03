@@ -21,7 +21,7 @@ Types
 
 nginx::site::redirect
     
-    creates a simple virtualhost which redirects to an url
+    creates a simple virtualhost with redirects to an url
 
     parameters:
 
@@ -37,6 +37,27 @@ nginx::site::redirect
             is this vhost the default one? (default: false)
         permanent:
             is this redirection permanent? (default: true)
+        enabled:
+            enable this vhost? (default: true)
+
+nginx::site::proxy
+    
+    creates a virtualhost with acts as a proxy
+
+    parameters:
+
+        nginx_servername: 
+            the virtualhost name
+        nginx_serveraliases
+            an array with alternative server names
+        nginx_port:
+            its port (default: 80)
+        nginx_upstream:
+            the upstream server, an ip (w.x.y.z) or a unix socket (sock:/path/to/socket)
+        nginx_rootdir:
+            the root directory
+        default_vhost:
+            is this vhost the default one? (default: false)
         enabled:
             enable this vhost? (default: true)
 
