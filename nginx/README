@@ -19,6 +19,14 @@ nginx::service
 Types
 -----
 
+nginx::site::purge
+
+    purge your sites-available and sites-enabled directories
+
+    Use it if you need to be sure that only the explicitly
+    specified virtual hosts exists
+
+
 nginx::site::redirect
     
     creates a simple virtualhost with redirects to an url
@@ -39,6 +47,7 @@ nginx::site::redirect
             is this redirection permanent? (default: true)
         enabled:
             enable this vhost? (default: true)
+
 
 nginx::site::proxy
     
