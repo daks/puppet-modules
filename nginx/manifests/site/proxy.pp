@@ -1,17 +1,19 @@
 
-define nginx::site::proxy($nginx_servername='',
-                          $nginx_serveraliases=[],
-                          $nginx_port='80',
-                          $nginx_upstream='',
-                          $nginx_rootdir='',
+define nginx::site::proxy($server_name='',
+                          $server_aliases=[],
+                          $port='80',
+                          $upstream='',
+                          $root_dir='',
+                          $media_url='',
+                          $media_dir='',
                           $default_vhost=false,
                           $enabled=true) {
 
     include nginx::package
 
     $define_servername = $default_vhost ?{
-        true    => "$nginx_servername default",
-        default => $nginx_servername,
+        true    => "$server_name default",
+        default => $server_name,
     }
     $src_filename = "/etc/nginx/sites-available/${name}"
     $dst_filename = "/etc/nginx/sites-enabled/${name}"

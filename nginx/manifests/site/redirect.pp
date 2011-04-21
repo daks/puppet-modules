@@ -1,8 +1,8 @@
 
-define nginx::site::redirect($nginx_servername='',
-                             $nginx_serveraliases=[],
-                             $nginx_port='80',
-                             $nginx_redirecturl='',
+define nginx::site::redirect($server_name='',
+                             $server_aliases=[],
+                             $port='80',
+                             $redirect_url='',
                              $default_vhost=false,
                              $permanent=true,
                              $enabled=true) {
@@ -10,8 +10,8 @@ define nginx::site::redirect($nginx_servername='',
     include nginx::package
 
     $define_servername = $default_vhost ?{
-        true    => "$nginx_servername default",
-        default => $nginx_servername,
+        true    => "$server_name default",
+        default => $server_name,
     }
     $define_permanent = $permanent ?{
         false   => "",

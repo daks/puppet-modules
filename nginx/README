@@ -33,13 +33,13 @@ nginx::site::redirect
 
     parameters:
 
-        nginx_servername: 
+        server_name: 
             the virtualhost name
-        nginx_serveraliases
+        server_aliases
             an array with alternative server names
-        nginx_port:
+        port:
             its port (default: 80)
-        nginx_redirecturl:
+        redirect_url:
             the destination url of the redirection
         default_vhost:
             is this vhost the default one? (default: false)
@@ -55,16 +55,20 @@ nginx::site::proxy
 
     parameters:
 
-        nginx_servername: 
+        server_name: 
             the virtualhost name
-        nginx_serveraliases
+        server_aliases
             an array with alternative server names
-        nginx_port:
+        port:
             its port (default: 80)
-        nginx_upstream:
+        upstream:
             the upstream server, an ip (w.x.y.z) or a unix socket (sock:/path/to/socket)
-        nginx_rootdir:
+        root_dir:
             the root directory
+        media_url:
+            url where media will be served
+        media_dir:
+            directory from which media will be served
         default_vhost:
             is this vhost the default one? (default: false)
         enabled:

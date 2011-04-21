@@ -1,7 +1,7 @@
 
 server {
-    listen <%= nginx_port %>;
-    server_name <%= define_servername %><% nginx_serveraliases.each do |val| -%> <%= val %><% end -%>;
-    rewrite ^(.*)$ <%= nginx_redirecturl %>$1 <%= define_permanent %>;
+    listen <%= port %>;
+    server_name <%= define_servername %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
+    rewrite ^(.*)$ <%= redirect_url %>$1 <%= define_permanent %>;
 }
 
