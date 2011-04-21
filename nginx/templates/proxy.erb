@@ -18,7 +18,7 @@ server {
         proxy_redirect off;       
 
         if (!-f $request_filename) {
-            proxy_pass <%= nginx_upstream %>;
+            proxy_pass app_server;
             break;
         }
     }
