@@ -18,6 +18,11 @@ class ntp::service {
         hasrestart => true,
         hasstatus  => true,
         require    => Class['ntp::package'],
+        subscribe  => File["/etc/ntp.conf"],
+    }
+
+   file { "/etc/ntp.conf":
+        ensure  => present,
+        content => template("ntp/ntp.conf.erb"), 
     }
 }
-    
