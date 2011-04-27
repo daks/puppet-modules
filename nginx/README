@@ -33,20 +33,20 @@ nginx::site::redirect
 
     parameters:
 
-        server_name: 
+        server_name (mandatory): 
             the virtualhost name
-        server_aliases
+        server_aliases (optional):
             an array with alternative server names
-        port:
-            its port (default: 80)
-        redirect_url:
+        port (optional, default: 80):
+            its port
+        redirect_url (mandatory):
             the destination url of the redirection
-        default_vhost:
-            is this vhost the default one? (default: false)
-        permanent:
-            is this redirection permanent? (default: true)
-        enabled:
-            enable this vhost? (default: true)
+        default_vhost (optional, default: false):
+            is this vhost the default one?
+        permanent (optional, default: true):
+            is this redirection permanent?
+        enabled (optional, default: true):
+            enable this vhost?
 
 
 nginx::site::proxy
@@ -55,22 +55,22 @@ nginx::site::proxy
 
     parameters:
 
-        server_name: 
+        server_name (mandatory): 
             the virtualhost name
-        server_aliases
+        server_aliases (optional):
             an array with alternative server names
-        port:
-            its port (default: 80)
-        upstream:
+        port (optional, default: 80):
+            its port
+        upstream (mandatory):
             the upstream server, an ip (w.x.y.z) or a unix socket (sock:/path/to/socket)
-        root_dir:
+        root_dir (mandatory):
             the root directory
-        media_url:
+        media_url (mandatory):
             url where media will be served
-        media_dir:
+        media_dir (mandatory):
             directory from which media will be served
-        default_vhost:
-            is this vhost the default one? (default: false)
-        enabled:
-            enable this vhost? (default: true)
+        default_vhost (optional, default: false):
+            is this vhost the default one?
+        enabled (optional, default: true):
+            enable this vhost?
 
