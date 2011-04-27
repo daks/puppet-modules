@@ -1,0 +1,9 @@
+
+This is a collection of modules to use with Puppet.
+
+Some modules are really simple, other are more complicated and powerful,
+these ones generally have a README file documentating their use.
+
+All these modules are actually tested on Debian Squeeze but they may work on
+other Debian versions, or other Puppet supported systems.
+
