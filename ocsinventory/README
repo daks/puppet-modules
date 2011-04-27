@@ -1,0 +1,22 @@
+Ocsinventory module
+===================
+
+Ocsinventory Puppet module
+
+Classes
+-------
+
+ocsinventory
+
+    includes the following ocsinventory::agent class
+
+
+ocsinventory::agent
+
+    installs the ocsinventory agent package and configures it
+
+    parameters:
+
+        ocs_server (mandatory):
+            the ocsinventory server to send inventories
+
