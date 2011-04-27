@@ -29,7 +29,7 @@ nginx::site::purge
 
 nginx::site::redirect
     
-    creates a simple virtualhost with redirects to an url
+    creates a simple virtualhost which redirects to an url
 
     parameters:
 
