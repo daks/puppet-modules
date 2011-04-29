@@ -1,0 +1,22 @@
+
+Apt module
+==========
+
+
+Classes
+-------
+
+apt::package
+    
+    installs necessary and useful packages
+
+
+apt::proxy
+
+    configures an HTTP proxy to be used by apt
+
+    parameters:
+
+        http_proxy (mandatory):
+            the proxy in the usual form "http://proxy.my.domain:port"
+
