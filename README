@@ -7,3 +7,5 @@ these ones generally have a README file documentating their use.
 All these modules are actually tested on Debian Squeeze but they may work on
 other Debian versions, or other Puppet supported systems.
 
+This modules are licensed under the BSD License, see the LICENSE file.
+
