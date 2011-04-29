@@ -9,3 +9,8 @@ other Debian versions, or other Puppet supported systems.
 
 This modules are licensed under the BSD License, see the LICENSE file.
 
+Main source code and project management (issues) website is on bitbucket at
+    http://bitbucket.org/daks/puppet-modules
+
+but if your prefer git over hg, the code is mirrored at 
+    http://github.com/daks/puppet-modules
