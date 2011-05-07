@@ -1,0 +1,56 @@
+Supervisor module
+=================
+
+Module for supervisord process control system. For supervisord version > 3
+
+
+Classes
+-------
+
+supervisor
+
+    includes the following supervisor::package and supervisor::service
+
+
+supervisor::package
+
+    installs the supervisord package
+
+
+supervisor::service
+
+    ensures that supervisord service is running
+
+
+
+Types
+-----
+
+supervisor::process
+
+    creates a new process to be controlled by supervisor
+
+    see supervisor doc for details on the parameters (names are the same)
+
+    parameters:
+
+        name (mandatory):
+            the process name, used for the config file and the process name
+        command (mandatory):
+            the command which will run 
+        autostart (optional, default: true):
+            
+        autorestart (optional, default: true)
+
+        startsecs (optional, default:1)
+
+        user (mandatory)
+
+        redirect_stderr (optional, default: false)
+
+        stdout_logfile (optional, default=AUTO)
+
+        stderr_logfile (optional, default=AUTO)
+
+        directory (optional)
+

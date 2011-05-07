@@ -1,0 +1,10 @@
+[program:<%= name %>]
+command=<%= command %>
+autostart=<%= autostart %>
+autorestart=<%= autorestart %>
+startsecs=<%= startsecs %>
+user=<%= user %>
+redirect_stderr=<%= redirect_stderr %>
+stdout_logfile=<%= stdout_logfile %>
+stderr_logfile=<%= stderr_logfile %>
+<% if directory != '' %>directory=<%= directory %><% end %>
