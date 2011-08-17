@@ -1,0 +1,36 @@
+Znc module
+==========
+
+Installs software and run a service using supervisor module under znc user id
+
+
+Classes
+-------
+
+znc
+
+    includes the following znc::package znc::user znc::service
+
+
+znc::package
+
+    installs znc and znc-extra package
+
+
+znc::user
+
+    creates a group and a user named znc
+
+
+znc::service
+
+    includes znc::service::supervisor
+
+    You need to include supervisor
+
+
+znc::service::supervisor
+
+    creates a supervisor process to run znc with znc identity
+
+
