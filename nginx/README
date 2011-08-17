@@ -74,3 +74,14 @@ nginx::site::proxy
         enabled (optional, default: true):
             enable this vhost?
 
+
+nginx::site::raw
+
+    here you can upload a file to be used as a virtualhost definition
+    it must contains all the needed information
+
+    parameters:
+
+        file_name (mandatory):
+            filename used, must be located at "puppet:///files/nginx/${file_name}"
+
