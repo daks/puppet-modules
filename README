@@ -1,16 +1,14 @@
 
 This is a collection of modules to use with Puppet.
 
-Some modules are really simple, other are more complicated and powerful,
+Some are really simple, other are more complicated and powerful,
 these ones generally have a README file documentating their use.
 
 All these modules are actually tested on Debian Squeeze but they may work on
 other Debian versions, or other Puppet supported systems.
 
-This modules are licensed under the BSD License, see the LICENSE file.
+They are released under the BSD License, see the LICENSE file.
 
 Main source code and project management (issues) website is on bitbucket at
-    http://bitbucket.org/daks/puppet-modules
-
-but if your prefer git over hg, the code is mirrored at 
-    http://github.com/daks/puppet-modules
+http://bitbucket.org/daks/puppet-modules but if your prefer git over hg, the
+code is mirrored at http://github.com/daks/puppet-modules
