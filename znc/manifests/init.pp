@@ -31,7 +31,6 @@ class znc::service {
 }
 
 class znc::service::supervisor {
-    include supervisor
     supervisor::process { "znc":
         command => "/usr/bin/znc -f -d /home/znc/.znc/",
         user => "znc",
