@@ -11,6 +11,12 @@ class mysql::client {
     }
 }
 
+class mysql::library {
+    package { "libmysqlclient-dev":
+        ensure => installed
+    }
+}
+
 class mysql::server {
     include mysql::server::package
     include mysql::server::service
