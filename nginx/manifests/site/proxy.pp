@@ -22,15 +22,13 @@ define nginx::site::proxy($server_name='',
         content => template("nginx/proxy.erb")
     }
 
-    if $enabled {
-        exec { "ln -s ${src_filename} ${dst_filename}":
-            subscribe => File["${src_filename}"],
-            refreshonly => true,
-        }
+    $ensure = $enabled ? {
+        true    => "link",
+        default => "absent",
     }
-    else {
-        exec { "rm -f ${dst_filename}":
-            subscribe => file["${src_filename}"],
-        }
+
+    file { $dst_filename:
+        ensure => $ensure,
+        target => $src_filename,
     }
 }

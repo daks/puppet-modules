@@ -35,42 +35,56 @@ nginx::site::redirect
 
         server_name (mandatory): 
             the virtualhost name
+
         server_aliases (optional):
             an array with alternative server names
+
         port (optional, default: 80):
             its port
+
         redirect_url (mandatory):
             the destination url of the redirection
+
         default_vhost (optional, default: false):
             is this vhost the default one?
+
         permanent (optional, default: true):
             is this redirection permanent?
+
         enabled (optional, default: true):
             enable this vhost?
 
 
 nginx::site::proxy
     
-    creates a virtualhost with acts as a proxy
+    creates a virtualhost using nginx as a proxy
 
     parameters:
 
         server_name (mandatory): 
             the virtualhost name
-        server_aliases (optional):
-            an array with alternative server names
-        port (optional, default: 80):
-            its port
+
         upstream (mandatory):
             the upstream server, an ip (w.x.y.z) or a unix socket (sock:/path/to/socket)
+
         root_dir (mandatory):
             the root directory
-        media_url (mandatory):
+
+        server_aliases (optional):
+            an array with alternative server names
+
+        port (optional, default: 80):
+            its port
+
+        media_url (optional):
             url where media will be served
-        media_dir (mandatory):
+
+        media_dir (optional):
             directory from which media will be served
+
         default_vhost (optional, default: false):
             is this vhost the default one?
+
         enabled (optional, default: true):
             enable this vhost?
 

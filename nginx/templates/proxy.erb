@@ -12,17 +12,19 @@ server {
 
     root                <%= root_dir %>;
 
-    location <%= media_url %> {
-        alias <%= media_dir %>;
-    }
+    <% if media_url != "" then %>
+        location <%= media_url %> {
+            alias <%= media_dir %>;
+        }
 
+    <% end %>
     location / {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
         proxy_redirect off;       
 
         if (!-f $request_filename) {
-            proxy_pass app_server;
+            proxy_pass http://<%= define_servername %>;
             break;
         }
     }
