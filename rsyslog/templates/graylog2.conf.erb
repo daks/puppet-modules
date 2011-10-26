@@ -1,0 +1,8 @@
+# Format messages to be Graylog2 friendly
+$template Graylog2Friendly,"<%%PRI%> %TIMESTAMP% %HOSTNAME% %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
+$ActionForwardDefaultTemplate Graylog2Friendly
+
+# Forward all logs to Graylog2
+# Replace 0.0.0.0 with your own Graylog2 server IP
+*.*     @<%= graylog2_server %>:<%= graylog2_port %>      #udp forwarding
+
