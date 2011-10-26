@@ -10,4 +10,10 @@ class apticron::package {
     }
 }
 
+class apticron::package::absent {
+    package { "apticron":
+        ensure => purged,
+    }
+}
+
 
