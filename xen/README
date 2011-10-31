@@ -1,0 +1,34 @@
+Xen module
+============
+
+Xen Puppet module
+
+Classes
+-------
+
+xen
+
+    install the Xen needed packages and run the service
+
+
+xen::package
+
+    installs the xen packages
+
+
+xen::service
+
+    ensure that xen services are running
+
+
+xen::boot
+
+    ensure that Xen kernels loads by default in grub
+    depends on the grub module
+
+
+xen::tools
+
+    installs xen-tools software
+
+
