@@ -21,6 +21,16 @@ rsyslog::service
     ensure that rsyslog service is running
 
 
+rsyslog::conf::udp_listening
+
+    adds configuration to allows listening of rsyslog server on UDP
+
+    parameters:
+
+        udp_port (optional, default='514'):
+            UDP port on which rsyslog will listen
+
+
 rsyslog::conf::udp_redirect
 
     adds configuration to redirect to a syslog server using UDP
