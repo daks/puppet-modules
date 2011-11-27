@@ -3,6 +3,7 @@
 class supervisor {
     include supervisor::package
     include supervisor::service
+    include supervisor::reload
 }
 
 class supervisor::package {
@@ -21,3 +22,9 @@ class supervisor::service {
     }
 }
 
+class supervisor::reload {
+    exec { "supervisorctl":
+        command     => "/usr/bin/supervisorctl reload",
+        refreshonly => "true",
+    }
+}

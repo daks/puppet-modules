@@ -1,0 +1,58 @@
+Rsyslog module
+============
+
+Rsyslog Puppet module
+
+Classes
+-------
+
+rsyslog
+
+    include rsyslog::package and rsyslog::service
+
+
+rsyslog::package
+
+    installs the rsyslog packages
+
+
+rsyslog::service
+
+    ensure that rsyslog service is running
+
+
+rsyslog::conf::udp_listening
+
+    adds configuration to allows listening of rsyslog server on UDP
+
+    parameters:
+
+        udp_port (optional, default='514'):
+            UDP port on which rsyslog will listen
+
+
+rsyslog::conf::udp_redirect
+
+    adds configuration to redirect to a syslog server using UDP
+
+    parameters:
+
+        redirect_server (mandatory):
+            rsyslog server
+        
+        redirect_port (optional, default='514')
+            rsyslog server port
+
+
+rsyslog::conf::graylog2
+
+    adds configuration to redirect logs to a graylog2 server
+
+    parameters:
+
+        graylog2_server (mandatory):
+            graylog2 server
+        
+        graylog2_port (optional, default='514')
+            graylog2 server port
+

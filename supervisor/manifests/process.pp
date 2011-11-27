@@ -14,5 +14,6 @@ define supervisor::process($command,
     $conf_file = "$conf_dir/$name.conf"
     file { $conf_file:
         content => template("supervisor/process.erb"),
+        notify  => Class["supervisor::reload"],
     }
 }
