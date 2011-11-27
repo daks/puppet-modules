@@ -1,5 +1,5 @@
 
-upstream app_server {
+upstream <%= define_servername %> {
     server      <%= upstream %> fail_timeout=0;
 }
 

@@ -65,7 +65,7 @@ nginx::site::proxy
             the virtualhost name
 
         upstream (mandatory):
-            the upstream server, an ip (w.x.y.z) or a unix socket (sock:/path/to/socket)
+            the upstream server, an ip (w.x.y.z) or a unix socket (unix:/path/to/socket)
 
         root_dir (mandatory):
             the root directory
