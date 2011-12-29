@@ -2,6 +2,10 @@
 Apt module
 ==========
 
+Depends on the puppet-common module, available at
+  https://github.com/puppet-modules/puppet-common or
+  https://github.com/daks/puppet-common
+
 
 Classes
 -------
@@ -19,4 +23,30 @@ apt::proxy
 
         http_proxy (mandatory):
             the proxy in the usual form "http://proxy.my.domain:port"
+
+
+Definitions
+-----------
+
+apt::source
+
+    add a specific packages source. It simply creates a new file in the 
+    /etc/apt/sources.list.d/ directory with the corresponding information
+
+    parameters:
+
+        uri (mandatory):
+            uri for this Debian source, in the form of http://ftp.debian.org/debian
+            see http://www.debian.org/mirror
+
+        dist (optional, default: $lsbdistcodename):
+            distribution source used, either by name (squeeze, sid) or class 
+              (stable, testing)
+
+        components (optional, default: main)
+            components used, like "main" "contrib" "non-free"
+            uses an array
+
+        src (optional, default: false)
+            defines if the source indicated is a binary or a source one
 

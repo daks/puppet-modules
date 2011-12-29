@@ -21,9 +21,10 @@ class apt::package {
     }
 }
 
-class apt::proxy {
+class apt::proxy($http_proxy) {
     file { "/etc/apt/apt.conf.d/10proxy":
         ensure  => present,
         content => template("apt/proxy.erb")
     }
 }
+
