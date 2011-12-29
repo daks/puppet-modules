@@ -1,3 +1,10 @@
+# /etc/apt/sources.list.d/<%= name %>.list
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module apt
+
 # <%= name %>
 deb <%= uri %> <%= dist %> <%= components %>
 <% if src then %>

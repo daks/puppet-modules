@@ -1,3 +1,10 @@
+# /etc/supervisor/conf.d/<%= name %>.conf
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module supervisor
+
 [program:<%= name %>]
 command=<%= command %>
 autostart=<%= autostart %>

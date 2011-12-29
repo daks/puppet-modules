@@ -1,3 +1,10 @@
+# /etc/rsyslog.d/udp_listening.conf
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module rsyslog
+
 # Provides UDP syslog reception
 $ModLoad imudp.so
 $UDPServerRun <%= udp_port %>

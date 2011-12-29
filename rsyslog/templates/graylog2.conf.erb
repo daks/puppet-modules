@@ -1,3 +1,10 @@
+# /etc/rsyslog.d/graylog2.conf
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module rsyslog
+
 # Format messages to be Graylog2 friendly
 $template Graylog2Friendly,"<%%PRI%> %TIMESTAMP% %HOSTNAME% %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
 $ActionForwardDefaultTemplate Graylog2Friendly

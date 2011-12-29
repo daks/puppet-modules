@@ -1,3 +1,10 @@
+# /etc/rsyslog.d/udp_redirect.conf
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module rsyslog
+
 # Forward all logs to <%= redirect_server %>:<%= redirect_port %> on UDP
 *.*     @<%= redirect_server %>:<%= redirect_port %>      #udp forwarding
 
