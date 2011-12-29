@@ -25,13 +25,19 @@ apt::proxy
             the proxy in the usual form "http://proxy.my.domain:port"
 
 
+apt::update
+
+    updates apt packages lists. It gets executed each time a source change
+
+
 Definitions
 -----------
 
 apt::source
 
     add a specific packages source. It simply creates a new file in the 
-    /etc/apt/sources.list.d/ directory with the corresponding information
+    /etc/apt/sources.list.d/ directory with the corresponding information,
+    and executes apt::update class
 
     parameters:
 

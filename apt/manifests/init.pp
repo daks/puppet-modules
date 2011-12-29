@@ -2,6 +2,8 @@
 
 class apt {
 
+    include apt::update
+
     $directories = ["/etc/apt/apt.conf.d", "/etc/apt/sources.list.d"]
     file { $directories:
         ensure  => "directory",
