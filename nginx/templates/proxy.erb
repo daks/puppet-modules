@@ -6,7 +6,7 @@
 # module nginx
 
 upstream <%= server_name %> {
-    server      <%= upstream %> fail_timeout=0;
+    server      <%= upstream %>;
 }
 
 server {        
