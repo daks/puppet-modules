@@ -9,9 +9,9 @@ upstream <%= define_servername %> {
     server      <%= upstream %> fail_timeout=0;
 }
 
-server {
-    listen      80;
-    server_name <%= define_servername %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
+server {        
+    listen      <%= define_port %>;
+    server_name <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
 
     access_log          /var/log/nginx/<%= define_servername %>.access.log;
     error_log           /var/log/nginx/<%= define_servername %>.error.log;

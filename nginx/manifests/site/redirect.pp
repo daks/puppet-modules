@@ -9,9 +9,9 @@ define nginx::site::redirect($server_name='',
 
     include nginx::package
 
-    $define_servername = $default_vhost ?{
-        true    => "$server_name default",
-        default => $server_name,
+    $define_port = $default_vhost ?{
+        true    => "$port default",
+        default => $port,
     }
     $define_permanent = $permanent ?{
         false   => "",
