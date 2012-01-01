@@ -8,6 +8,6 @@
 server {
     listen <%= define_port %>;
     server_name <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
-    rewrite ^(.*)$ <%= redirect_url %>$1 <%= define_permanent %>;
+    rewrite <%= rewrite_pattern %>;
 }
 

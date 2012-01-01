@@ -2,7 +2,7 @@
 define nginx::site::redirect($server_name='',
                              $server_aliases=[],
                              $port='80',
-                             $redirect_url='',
+                             $rewrite_pattern='',
                              $default_vhost=false,
                              $permanent=true,
                              $enabled=true) {

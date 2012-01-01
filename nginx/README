@@ -42,14 +42,12 @@ nginx::site::redirect
         port (optional, default: 80):
             its port
 
-        redirect_url (mandatory):
-            the destination url of the redirection
+        rewrite_pattern (mandatory):
+            the rewrite pattern, see Nginx doc
+            with eventual other keywords (like permanent...)
 
         default_vhost (optional, default: false):
             is this vhost the default one?
-
-        permanent (optional, default: true):
-            is this redirection permanent?
 
         enabled (optional, default: true):
             enable this vhost?
