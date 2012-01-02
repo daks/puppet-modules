@@ -28,7 +28,7 @@ define nginx::site::proxy($server_name='',
     }
 
     file { "${dst_filename}":
-        ensure => "${ensure},
+        ensure => "${ensure}",
         target => "${src_filename}",
     }
 }
