@@ -1,0 +1,18 @@
+# /etc/nginx/sites-available/<%= name %>
+#
+# file managed by Puppet
+# do not make any manual change here as it will be overwritten
+#
+# module nginx
+
+server {
+    listen              <%= define_port %>;
+    server_name         <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
+
+    access_log          /var/log/nginx/<%= server_name %>.access.log;
+    error_log           /var/log/nginx/<%= server_name %>.error.log;
+
+    root                <%= root_dir %>;
+    index               <%= index_files %>;
+}
+
