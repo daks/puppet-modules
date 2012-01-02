@@ -18,7 +18,9 @@ server {
     access_log          /var/log/nginx/<%= server_name %>.access.log;
     error_log           /var/log/nginx/<%= server_name %>.error.log;
 
+    <% if root_dir != '' %>
     root                <%= root_dir %>;
+    <% end %>
 
     <% location_blocks.each_pair do |url, content| %>
     location <%= url %> {
