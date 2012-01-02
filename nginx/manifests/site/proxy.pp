@@ -4,8 +4,7 @@ define nginx::site::proxy($server_name='',
                           $port='80',
                           $upstream='',
                           $root_dir='',
-                          $location_url='',
-                          $location_content='',
+                          $location_blocks={},
                           $default_vhost=false,
                           $enabled=true) {
 

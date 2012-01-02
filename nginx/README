@@ -75,11 +75,9 @@ nginx::site::proxy
         port (optional, default: 80):
             its port
 
-        location_url (optional):
-            url for a location block
-
-        location_content (optional):
-            content of this location block
+        location_blocks (optional):
+            an hash { $url1 => $content1, $url2 => $content2 } to define blocks like
+             location $url1 { $content1 }
 
         default_vhost (optional, default: false):
             is this vhost the default one?

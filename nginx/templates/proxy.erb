@@ -18,12 +18,12 @@ server {
 
     root                <%= root_dir %>;
 
-    <% if location_url != "" then %>
-    location <%= location_url %> {
-        <%= location_content %>
+    <% location_blocks.each_pair do |url, content| %>
+    location <%= url %> {
+        <%= content %>
     }
-
     <% end %>
+
     location / {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
