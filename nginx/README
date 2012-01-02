@@ -90,8 +90,12 @@ nginx::site::proxy
         server_name (mandatory): 
             the virtualhost name
 
-        upstream (mandatory):
-            the upstream server, an ip (w.x.y.z) or a unix socket (unix:/path/to/socket)
+        upstreams (mandatory):
+            the upstream server(s), specifying an hash of upstream name and at least one server, like
+                upstreams => { "upstream1" => "server1",
+                               "upstream2" => ["server2", "server3"] }
+
+            the server is an ip (w.x.y.z) or a unix socket (unix:/path/to/socket) 
             with eventual options (like fail_timeout...)
 
         root_dir (mandatory):

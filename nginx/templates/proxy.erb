@@ -5,9 +5,11 @@
 #
 # module nginx
 
-upstream <%= server_name %> {
-    server              <%= upstream %>;
+<% upstreams.each_pair do |server_name, upstream_servers| %>
+upstream <%= server_name %> {<% upstream_servers.each do |upstream_server| %>
+    server              <%= upstream_server %>;<% end %>
 }
+<% end %>
 
 server {        
     listen              <%= define_port %>;
