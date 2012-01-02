@@ -81,7 +81,7 @@ nginx::site::static
             enable this vhost?
 
 
-ginx::site::proxy
+nginx::site::proxy
     
     creates a virtualhost using nginx as a proxy
 
