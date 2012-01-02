@@ -6,8 +6,8 @@
 # module nginx
 
 server {
-    listen <%= define_port %>;
-    server_name <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
-    rewrite <%= rewrite_pattern %>;
+    listen              <%= define_port %>;
+    server_name         <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
+    rewrite             <%= rewrite_pattern %>;
 }
 

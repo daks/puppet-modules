@@ -6,12 +6,12 @@
 # module nginx
 
 upstream <%= server_name %> {
-    server      <%= upstream %>;
+    server              <%= upstream %>;
 }
 
 server {        
-    listen      <%= define_port %>;
-    server_name <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
+    listen              <%= define_port %>;
+    server_name         <%= server_name %><% server_aliases.each do |val| -%> <%= val %><% end -%>;
 
     access_log          /var/log/nginx/<%= server_name %>.access.log;
     error_log           /var/log/nginx/<%= server_name %>.error.log;
