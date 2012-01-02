@@ -4,7 +4,6 @@ define nginx::site::redirect($server_name='',
                              $port='80',
                              $rewrite_pattern='',
                              $default_vhost=false,
-                             $permanent=true,
                              $enabled=true) {
 
     include nginx::package
@@ -13,10 +12,7 @@ define nginx::site::redirect($server_name='',
         true    => "${port} default",
         default => "${port}",
     }
-    $define_permanent = $permanent ?{
-        false   => "",
-        default => "permanent",
-    }
+
     $src_filename = "/etc/nginx/sites-available/${name}"
     $dst_filename = "/etc/nginx/sites-enabled/${name}"
 
