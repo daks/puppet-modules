@@ -75,11 +75,11 @@ nginx::site::proxy
         port (optional, default: 80):
             its port
 
-        media_url (optional):
-            url where media will be served
+        location_url (optional):
+            url for a location block
 
-        media_dir (optional):
-            directory from which media will be served
+        location_content (optional):
+            content of this location block
 
         default_vhost (optional, default: false):
             is this vhost the default one?

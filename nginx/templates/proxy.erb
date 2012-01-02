@@ -18,10 +18,10 @@ server {
 
     root                <%= root_dir %>;
 
-    <% if media_url != "" then %>
-        location <%= media_url %> {
-            alias <%= media_dir %>;
-        }
+    <% if location_url != "" then %>
+    location <%= location_url %> {
+        <%= location_content %>
+    }
 
     <% end %>
     location / {
