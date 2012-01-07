@@ -40,6 +40,9 @@ apt::source
     and executes apt::update class
 
     parameters:
+    
+        ensure (optional, default:present):
+            use present or absent to identicate if the source should exists
 
         uri (mandatory):
             uri for this Debian source, in the form of http://ftp.debian.org/debian
