@@ -25,9 +25,29 @@ apt::proxy
             the proxy in the usual form "http://proxy.my.domain:port"
 
 
+apt::preferences
+
+    upload a file as /etc/apt/preferences
+
+    parameters:
+
+        ensure (optional, default=present):
+            use present or absent to identicate if the file should exists
+
+        source (mandatory):
+            if true search for a file in the following places
+                puppet:///files/${fqdn}/etc/apt/preferences
+                puppet:///files/${hostgroup}/etc/apt/preferences
+                puppet:///files/${domain}/etc/apt/preferences
+                puppet:///files/global/etc/apt/preferences
+
+            you can also specify another source directly
+
+
 apt::update
 
     updates apt packages lists. It gets executed each time a source change
+
 
 
 Definitions
