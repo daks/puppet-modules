@@ -26,7 +26,7 @@ class puppet::service {
 
     file { "/etc/puppet/puppet.conf":
         ensure => "present",
-        content => template("modules/${module_name}/puppet.conf.erb"),
+        content => template("${module_name}/puppet.conf.erb"),
     }
 
     service { "puppet":
