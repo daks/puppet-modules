@@ -22,6 +22,18 @@ server {
     root                <%= root_dir %>;
     <% end %>
 
+    <% if standard_location_block != '' %>
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;       
+        if (!-f $request_filename) {
+            proxy_pass http://<%= standard_location_block %>;
+            break;
+        }
+    }
+    <% end %>
+
     <% location_blocks.each_pair do |url, content| %>
     location <%= url %> {
         <%= content %>
