@@ -125,6 +125,12 @@ nginx::site::raw
 
     parameters:
 
-        file_name (mandatory):
-            filename used, must be located at "puppet:///files/nginx/${file_name}"
+        source (mandatory):
+            if true search for a file in the following places
+                puppet:///files/${fqdn}/etc/nginx/sites-available/${name}
+                puppet:///files/${hostgroup}/etc/nginx/sites-available/${name}
+                puppet:///files/${domain}/etc/nginx/sites-available/${name}
+                puppet:///files/global/etc/nginx/sites-available/${name}
+
+            you can also specify another source directly
 
