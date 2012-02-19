@@ -2,7 +2,7 @@
 define nginx::site::proxy($server_name='',
                           $server_aliases=[],
                           $port='80',
-                          $upstreams=[],
+                          $upstreams={},
                           $root_dir='',
                           $location_blocks={},
                           $default_vhost=false,

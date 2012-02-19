@@ -107,9 +107,10 @@ nginx::site::proxy
         port (optional, default: 80):
             its port
 
-        location_blocks (optional):
+        location_blocks (mandatory):
             an hash { $url1 => $content1, $url2 => $content2 } to define blocks like
              location $url1 { $content1 }
+            you need to define yourself the block(s) to redirect to upstream(s)
 
         default_vhost (optional, default: false):
             is this vhost the default one?
