@@ -138,3 +138,6 @@ nginx::site::raw
 
             you can also specify another source directly
 
+        enabled (optional, default: true):
+            enable this vhost?
+

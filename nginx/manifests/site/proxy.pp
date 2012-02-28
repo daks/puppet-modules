@@ -22,13 +22,13 @@ define nginx::site::proxy($server_name='',
         content => template("nginx/proxy.erb")
     }
 
-    $ensure = $enabled ? {
-        true    => "link",
-        default => "absent",
-    }
-
     file { "${dst_filename}":
-        ensure => "${ensure}",
-        target => "${src_filename}",
+        ensure          => $enabled ? {
+            true        => link,
+            default     => absent,
+        },
+        target          => "${src_filename}",
+        subscribe       => File["${src_filename}"],
+        notify          => Class['nginx::service'],
     }
 }

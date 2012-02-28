@@ -19,18 +19,15 @@ define nginx::site::raw($source='',
             ],
             default => "${source}",
         },
-        notify  => Class['nginx::service'],
-        require => Class['nginx::package'],
     }
 
     file { "${dst_filename}":
-        ensure    => $enabled ? {
-            true    => link,
-            default => absent,
+        ensure          => $enabled ? {
+            true        => link,
+            default     => absent,
         },
-        target    => "${src_filename}",
-        subscribe => File["${src_filename}"],
-        notify  => Class['nginx::service'],
-        require => Class['nginx::package'],
+        target          => "${src_filename}",
+        subscribe       => File["${src_filename}"],
+        notify          => Class['nginx::service'],
     }
 }
