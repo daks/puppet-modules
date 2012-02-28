@@ -4,6 +4,7 @@ define nginx::site::static($server_name,
                            $port='80',
                            $root_dir,
                            $index_files='index.html index.htm',
+                           $ssl=false,
                            $default_vhost=false,
                            $enabled=true) {
 
@@ -12,6 +13,11 @@ define nginx::site::static($server_name,
     $define_port = $default_vhost ?{
         true    => "${port} default",
         default => "${port}",
+    }
+    $define_cert_basename = $ssl ? {
+        true    => "/etc/nginx/ssl/${server_name}",
+        false   => "",
+        default => "/etc/nginx/ssl/${ssl}",
     }
 
     $src_filename = "/etc/nginx/sites-available/${name}"

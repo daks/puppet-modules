@@ -17,6 +17,10 @@ server {
     access_log          /var/log/nginx/<%= server_name %>.access.log;
     error_log           /var/log/nginx/<%= server_name %>.error.log;
 
+    <% if define_cert_basename != '' %>ssl                 on;
+    ssl_certificate     <%= define_cert_basename %>.pem;
+    ssl_certificate_key <%= define_cert_basename %>.key;<% end %>
+
     <% if root_dir != '' %>root                <%= root_dir %>;<% end %>
 
     <% if standard_location_block != '' %>

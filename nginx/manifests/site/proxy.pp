@@ -6,6 +6,7 @@ define nginx::site::proxy($server_name='',
                           $root_dir='',
                           $standard_location_block='',
                           $location_blocks={},
+                          $ssl=false,
                           $default_vhost=false,
                           $enabled=true) {
 
@@ -14,6 +15,11 @@ define nginx::site::proxy($server_name='',
     $define_port = $default_vhost ?{
         true    => "${port} default",
         default => "${port}",
+    }
+    $define_cert_basename = $ssl ? {
+        true    => "/etc/nginx/ssl/${server_name}",
+        false   => "",
+        default => "/etc/nginx/ssl/${ssl}",
     }
     $src_filename = "/etc/nginx/sites-available/${name}"
     $dst_filename = "/etc/nginx/sites-enabled/${name}"

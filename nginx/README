@@ -74,6 +74,13 @@ nginx::site::static
         index_files (optional, default: 'index.html index.htm'):
             specify files to be used as an index to the directory served
 
+        ssl (optional, default: false):
+            if true, activate ssl and uses /etc/nginx/ssl/$server_name.pem and .key
+             for the certificate and its key
+            if false, do not activate ssl
+            if another value, uses the name given to found certificate (with .pem)
+             and key (with .key) in /etc/nginx/ssl
+
         default_vhost (optional, default: false):
             is this vhost the default one?
 
@@ -114,6 +121,13 @@ nginx::site::proxy
             an hash { $url1 => $content1, $url2 => $content2 } to define blocks like
              location $url1 { $content1 }
             you need to define yourself the block(s) to redirect to upstream(s)
+
+        ssl (optional, default: false):
+            if true, activate ssl and uses /etc/nginx/ssl/$server_name.pem and .key
+             for the certificate and its key
+            if false, do not activate ssl
+            if another value, uses the name given to found certificate (with .pem)
+             and key (with .key) in /etc/nginx/ssl
 
         default_vhost (optional, default: false):
             is this vhost the default one?
