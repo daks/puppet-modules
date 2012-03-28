@@ -9,6 +9,11 @@ class ocsinventory::agent {
         ensure => installed,
     }
 
+    
+    $tag = $ocs_tag ? {
+        undef   => '',
+        default => "$ocs_tag",
+    }
     file { "/etc/ocsinventory/ocsinventory-agent.cfg":
         ensure  => present,
         content => template("ocsinventory/ocsinventory-agent.cfg.erb"),

@@ -20,3 +20,5 @@ ocsinventory::agent
         ocs_server (mandatory):
             the ocsinventory server to send inventories
 
+        ocs_tag (optional):
+            a tag for ocsinventory client

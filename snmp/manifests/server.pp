@@ -17,6 +17,7 @@ class snmp::server {
                     "puppet:///files/${domain}/etc/snmp/snmpd.conf",
                     "puppet:///files/global/etc/snmp/snmpd.conf",
                    ],
+        notify  => Service["${snmp::params::srv_name}"],
     }
     
     service { "${snmp::params::srv_name}":
