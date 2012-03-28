@@ -1,0 +1,19 @@
+apache module
+=============
+
+
+Classes
+-------
+
+apache
+    require apache::params, apache::package, apache::service
+    
+apache::package
+    installs package
+
+apache::service
+    ensure that Apache service is running
+
+apache::params
+    configures variables available for classes and defines, depending on the
+    operatingsystem
