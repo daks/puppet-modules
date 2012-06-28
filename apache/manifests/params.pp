@@ -2,10 +2,10 @@
 #
 # Defines apache parameters
 #
-class apache::params [
+class apache::params {
     $package = $operatingsystem ? {
         debian  => "apache2",
-        ubuntu  => "apache2,
+        ubuntu  => "apache2",
         default => undef,
     }
     $service = $operatingsystem ? {
