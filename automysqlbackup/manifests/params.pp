@@ -8,4 +8,10 @@ class automysqlbackup::params {
         ubuntu  => "automysqlbackup",
         default => undef,
     }
+
+    $conffile = $operatingsystem ? {
+        debian  => "/etc/default/automysqlbackup",
+        ubuntu  => "/etc/default/automysqlbackup",
+        default => undef,
+    }
 }
